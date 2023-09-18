@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "to_dos",
+  "info": {
+    "singularName": "to-do",
+    "pluralName": "to-dos",
+    "displayName": "ToDo",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 10
+    },
+    "description": {
+      "type": "richtext",
+      "maxLength": 25
+    },
+    "mustBeCompleted": {
+      "type": "datetime"
+    },
+    "completed": {
+      "type": "boolean"
+    },
+    "to_do_group": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::to-do-group.to-do-group",
+      "inversedBy": "to_dos"
+    },
+    "longDescription": {
+      "type": "richtext",
+      "maxLength": 1200
+    }
+  }
+}
